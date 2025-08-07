@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="all-posts.html">Posts</a></li>
+                    <li><a href="all-courses.html">Courses</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="admin-section">
+            <h2>Manage Content</h2>
+            <div class="admin-container">
+                <!-- Main Buttons for Managing Sections -->
+                <div class="button-group">
+                    <button class="manage-button" data-target="posts-options">Manage Posts</button>
+                    <button class="manage-button" data-target="courses-options">Manage Courses</button>
+                    <button class="manage-button" data-target="users-options">Manage Users</button>
+                </div>
+
+                <!-- Options for Managing Posts -->
+                <div id="posts-options" class="options" style="display:none;">
+                    <button class="option-button" data-target="create-post-form">Create Post</button>
+                    <button class="option-button" data-target="update-post-form">Update Post</button>
+                    <button class="option-button" data-target="delete-post-form">Delete Post</button>
+                </div>
+
+                <!-- Options for Managing Courses -->
+                <div id="courses-options" class="options" style="display:none;">
+                    <button class="option-button" data-target="create-course-form">Create Course</button>
+                    <button class="option-button" data-target="update-course-form">Update Course</button>
+                    <button class="option-button" data-target="delete-course-form">Delete Course</button>
+                </div>
+
+                <!-- Options for Managing Users -->
+                <div id="users-options" class="options" style="display:none;">
+                    <button class="option-button" data-target="get-users-form">Get All Users</button>
+                    <button class="option-button" data-target="delete-user-form">Delete User</button>
+                </div>
+
+                <!-- Forms Container -->
+                <div id="forms-container">
+                    <!-- Forms for Managing Posts -->
+                    <form id="create-post-form" style="display:none;">
+                        <h4>Create Post</h4>
+                        <label for="create-post-title">Title:</label>
+                        <input type="text" id="create-post-title" name="title" required>
+                        <label for="create-post-content">Content:</label>
+                        <textarea id="create-post-content" name="content" required></textarea>
+                        <label for="create-post-timestamp">Timestamp:</label>
+                        <input type="datetime-local" id="create-post-publishtime" name="publishtime" required>
+                        <button type="submit">Create Post</button>
+                    </form>
+
+                    <form id="update-post-form" style="display:none;">
+                        <h4>Update Post</h4>
+                        <label for="update-post-id">Post ID:</label>
+                        <input type="text" id="update-post-id" name="id" required>
+                        <label for="update-post-title">Title:</label>
+                        <input type="text" id="update-post-title" name="title" required>
+                        <label for="update-post-content">Content:</label>
+                        <textarea id="update-post-content" name="content" required></textarea>
+                        <button type="submit">Update Post</button>
+                    </form>
+
+                    <form id="delete-post-form" style="display:none;">
+                        <h4>Delete Post</h4>
+                        <label for="delete-post-id">Post ID:</label>
+                        <input type="text" id="delete-post-id" name="id" required>
+                        <button type="submit">Delete Post</button>
+                    </form>
+
+                    <!-- Forms for Managing Courses -->
+                    <form id="create-course-form" style="display:none;">
+                        <h4>Create Course</h4>
+                        <label for="create-course-name">Name:</label>
+                        <input type="text" id="create-course-name" name="name" required>
+                        <label for="create-course-description">Description:</label>
+                        <textarea id="create-course-description" name="description" required></textarea>
+                        <label for="create-course-price">Price:</label>
+                        <input type="number" id="create-course-price" name="price" required>
+                        <label for="create-course-discount">Discount (%):</label>
+                        <input type="number" id="create-course-discount" name="discount" step="0.01" value="0.00"
+                            min="0" max="100">
+                        <button type="submit">Create Course</button>
+                    </form>
+
+                    <form id="update-course-form" style="display:none;">
+                        <h4>Update Course</h4>
+                        <label for="update-course-id">Course ID:</label>
+                        <input type="text" id="update-course-id" name="id" required>
+                        <label for="update-course-name">Name:</label>
+                        <input type="text" id="update-course-name" name="name" required>
+                        <label for="update-course-description">Description:</label>
+                        <textarea id="update-course-description" name="description" required></textarea>
+                        <label for="update-course-price">Price:</label>
+                        <input type="number" id="update-course-price" name="price" required>
+                        <label for="update-course-discount">Discount (%):</label>
+                        <input type="number" id="update-course-discount" name="discount" step="0.01" value="0.00"
+                            min="0" max="100">
+                        <button type="submit">Update Course</button>
+                    </form>
+
+                    <form id="delete-course-form" style="display:none;">
+                        <h4>Delete Course</h4>
+                        <label for="delete-course-id">Course ID:</label>
+                        <input type="text" id="delete-course-id" name="id" required>
+                        <button type="submit">Delete Course</button>
+                    </form>
+
+                    <!-- Forms for Managing Users -->
+                    <form id="get-users-form" style="display:none;">
+                        <h4>Get All Users</h4>
+                        <button type="submit">Get Users</button>
+                    </form>
+
+                    <table id="users-table" style="display:none;">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Admin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- User rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+
+                    <form id="delete-user-form" style="display:none;">
+                        <h4>Delete User</h4>
+                        <label for="delete-user-id">User ID:</label>
+                        <input type="text" id="delete-user-id" name="id" required>
+                        <button type="submit">Delete User</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

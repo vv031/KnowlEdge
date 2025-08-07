@@ -1,0 +1,521 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray */
+    color: #333333; /* Dark gray */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+header {
+    background-color: #333333; /* Dark gray */
+    color: #ffffff; /* White */
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Vertical padding */
+    display: flex; /* Use flexbox for header layout */
+    justify-content: center; /* Center the .header-container within the header */
+    align-items: center; /* Center items vertically */
+}
+
+.header-container {
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width */
+    display: flex; /* Use flexbox for header container layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 0 1rem; /* Horizontal padding */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display navigation items in a row */
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header a {
+    color: #ffffff; /* White */
+    text-decoration: none;
+}
+
+main {
+    flex: 1; /* Ensure main content grows to fill available space */
+    padding: 2rem;
+}
+
+.container {
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #333333; /* Dark gray */
+    color: #ffffff; /* White */
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.post-item p {
+    margin: 0.5rem 0 0 0; /* Add a bit of spacing above the excerpt */
+    color: #666666; /* Lighter gray color for the excerpt text */
+    font-size: 0.9rem; /* Slightly smaller font size for the excerpt */
+}
+
+.publish-time {
+    color: #999999; /* Even lighter gray for publish time */
+    font-size: 0.8rem; /* Smaller font size for publish time */
+    margin-top: 0.5rem; /* Add some space above the publish time */
+}
+
+/* New CSS for the single post content */
+#post-content {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width similar to the post items */
+    margin: 0 auto; /* Center the content */
+    padding: 1rem; /* Inner padding for content */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+} 
+
+/* Course content styles */
+#course-content {
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a slight elevation effect */
+    padding: 2rem; /* Padding inside the container */
+    margin: 2rem auto; /* Center the container with margin */
+    max-width: 800px; /* Maximum width for the container */
+    text-align: center; /* Center align text inside the container */
+    position: relative; /* Position relative for child positioning */
+}
+
+#course-content h2 {
+    color: #333333; /* Dark gray text color */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.course-description {
+    font-size: 1rem; /* Font size for content */
+    color: #555555; /* Medium gray color for text */
+    margin-bottom: 1rem; /* Space below the description */
+}
+
+.course-price {
+    font-size: 1.5rem; /* Larger font size for price */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #ff5722; /* Color for price */
+    margin-bottom: 1rem; /* Space below the price */
+}
+
+.course-discount {
+    position: absolute;
+    top: 10px; /* Offset from top */
+    left: 10px; /* Offset from left */
+    background-color: #ff5722; /* Discount box background color */
+    color: #ffffff; /* White text */
+    padding: 0.5rem;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.8rem; /* Smaller font size */
+}
+
+/* Additional styles for displaying original price with discount */
+.original-price {
+    text-decoration: line-through; /* Strike through original price */
+    color: #999999; /* Light gray color */
+}
+
+#post-list,
+#upcoming-post-list,
+#course-list,
+#all-post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between items */
+    padding: 0;
+    list-style: none; /* Remove default list styling */
+}
+
+.post-item,
+.course-item {
+    flex: 1 1 calc(30% - 20px); /* Adjust width for 3 items per row with spacing */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    background-color: #ffffff; /* White background for the boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a slight elevation effect */
+    padding: 1rem; /* Inner padding for content */
+    margin-bottom: 20px; /* Spacing at the bottom */
+    position: relative; /* Position relative for discount box */
+    text-align: center; /* Center align text inside the box */
+}
+
+.post-item a,
+.course-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333333; /* Dark gray text color */
+}
+
+.course-discount {
+    position: absolute; /* Position discount box */
+    top: 10px; /* Offset from top */
+    left: 10px; /* Offset from left */
+    background-color: #ff5722; /* Discount box background color */
+    color: #ffffff; /* White text */
+    padding: 0.5rem; /* Padding inside discount box */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.8rem; /* Smaller font size */
+}
+
+.original-price {
+    text-decoration: line-through; /* Strike through original price */
+    color: #999999; /* Light gray color */
+}
+
+.countdown-timer {
+    color: #ff0000; /* Red color for countdown timer */
+    font-size: 1rem; /* Font size for countdown timer */
+    margin-top: 1rem; /* Spacing above the timer */
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-more {
+    font-size: 0.9rem;
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.view-more:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Common Styles for Login and Signup Sections */
+#login-section,
+#signup-section {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for slight elevation */
+    padding: 2rem; /* Padding inside the container */
+    max-width: 400px; /* Maximum width for the container */
+    margin: 2rem auto; /* Center the container with margin */
+    text-align: center; /* Center align text inside the container */
+}
+
+#login-section h2,
+#signup-section h2 {
+    color: #333333; /* Dark gray text color */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+#login-section form,
+#signup-section form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 1rem; /* Space between form elements */
+}
+
+#login-section label,
+#signup-section label {
+    text-align: left; /* Left align labels */
+    color: #555555; /* Medium gray color for text */
+}
+
+#login-section input,
+#signup-section input {
+    padding: 0.5rem; /* Padding inside the input fields */
+    border: 1px solid #cccccc; /* Border color for input fields */
+    border-radius: 5px; /* Rounded corners for input fields */
+    font-size: 1rem; /* Font size for input fields */
+}
+
+#login-section button,
+#signup-section button {
+    padding: 0.75rem; /* Padding inside the button */
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* No border for button */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#login-section button:hover,
+#signup-section button:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+/* Logout Section Styles */
+#logout-section {
+    text-align: center; /* Center align text inside the container */
+    margin: 2rem auto; /* Center the container with margin */
+}
+
+#logout-section button {
+    padding: 0.75rem; /* Padding inside the button */
+    background-color: #dc3545; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* No border for button */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#logout-section button:hover {
+    background-color: #c82333; /* Darker red background on hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
+.success-message {
+    color: green;
+    margin-top: 1rem;
+}
+
+/* Common Styles for Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adds space between form fields */
+    margin-top: 1rem; /* Adds space at the top of the form */
+    max-width: 500px; /* Sets max width for form */
+    margin: 0 auto; /* Centers the form container */
+}
+
+form label, form input, form textarea, form button {
+    width: 100%;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+form button {
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem; /* Adds space above the button */
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for Centering the Manage Content Section */
+#admin-section {
+    text-align: center;
+}
+
+.button-group, .options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Adds space between buttons */
+    margin-bottom: 1rem; /* Adds space below the button group */
+}
+
+/* Main Buttons for Managing Sections (Blue) */
+.manage-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff; /* Blue background color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.manage-button:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary Option Buttons (Green) */
+.option-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #28a745; /* Green background color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    background-color: #218838;
+}
+
+/* Additional Styles for Option Buttons */
+.options {
+    margin-top: 1rem; /* Adds space above the options */
+}
+
+/* Styles for Users Table */
+#users-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spaces between table cells */
+    margin-top: 1rem;
+}
+
+#users-table th, #users-table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #dddddd; /* Light grey border */
+}
+
+#users-table th {
+    background-color: #007bff; /* Header background color */
+    color: #ffffff; /* Header text color */
+}
+
+#users-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for better readability */
+}
+
+#users-table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Payment Page Styles */
+.payment-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center align items */
+    padding: 1rem;
+}
+
+.payment-details {
+    text-align: left;
+    margin-bottom: 1rem;
+    width: 100%;  /* Ensure it takes the full width */
+    max-width: 600px;  /* Limit the max width for better readability */
+}
+
+#payment-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;  /* Ensure form doesn't stretch too much */
+}
+
+fieldset {
+    margin-bottom: 1rem;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 1rem;
+}
+
+.payment-methods label {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Ensure the spacing remains consistent */
+.hidden {
+    visibility: hidden;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start */
+        padding: 0 2rem; /* Add some padding */
+    }
+
+    header nav ul {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow wrapping of items */
+        justify-content: flex-start; /* Align items to the start */
+    }
+
+    .post-item, .course-item {
+        flex: 1 1 calc(45% - 20px); /* 2 items per row */
+    }
+
+    .button-group, .options {
+        flex-direction: column;
+        gap: 0.5rem; /* Adjust spacing */
+    }
+
+    #course-content {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .manage-button, .option-button {
+        width: 100%; /* Full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .post-item, .course-item {
+        flex: 1 1 100%; /* 1 item per row */
+    }
+
+    .header-container {
+        padding: 0 0.5rem;
+        align-items: center; /* Center items */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Align items vertically */
+        align-items: center; /* Center items */
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .container, #post-content, #course-content, #payment-form {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .button-group, .options {
+        gap: 0.5rem;
+    }
+
+    .view-more {
+        font-size: 0.8rem;
+    }
+
+    .payment-details, .payment-methods {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .manage-button, .option-button {
+        width: 100%; /* Full width */
+    }
+}

@@ -1,0 +1,1 @@
+KnowlEdge is a full-stack web app that combines blogging and course management in one platform. Built with Node.js, MySQL, HTML, CSS, and JavaScript, it allows users to explore blogs and structured courses while enabling admins to manage content easily and efficiently.

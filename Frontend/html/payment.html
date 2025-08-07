@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1><a href="index.html">My Blog</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="all-posts.html">Posts</a></li>
+                    <li><a href="all-courses.html">Courses</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="payment-main">
+        <h1>Payment Page</h1>
+        <div class="payment-details">
+            <p>Order ID: <span id="order-id"></span></p>
+            <p>Course ID: <span id="course-id"></span></p>
+            <p>Amount: <span id="amount"></span></p>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="payment-form">
+            <fieldset>
+                <legend>Payment Method:</legend>
+                <div class="payment-methods">
+                    <label for="credit-card">
+                        <input type="radio" id="credit-card" name="payment-method" value="Credit Card" required>
+                        Credit Card
+                    </label>
+                    <label for="debit-card">
+                        <input type="radio" id="debit-card" name="payment-method" value="Debit Card">
+                        Debit Card
+                    </label>
+                    <label for="upi">
+                        <input type="radio" id="upi" name="payment-method" value="UPI">
+                        UPI
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Credit Card Form -->
+            <div id="credit-card-form" class="payment-details-form" style="display: none;">
+                <label for="cc-number">Credit Card Number:</label>
+                <input type="text" id="cc-number" name="cc-number" required>
+                <label for="cc-expiry">Expiry Date:</label>
+                <input type="text" id="cc-expiry" name="cc-expiry" required>
+                <label for="cc-cvv">CVV:</label>
+                <input type="text" id="cc-cvv" name="cc-cvv" required>
+            </div>
+
+            <!-- Debit Card Form -->
+            <div id="debit-card-form" class="payment-details-form" style="display: none;">
+                <label for="dc-number">Debit Card Number:</label>
+                <input type="text" id="dc-number" name="dc-number" required>
+                <label for="dc-expiry">Expiry Date:</label>
+                <input type="text" id="dc-expiry" name="dc-expiry" required>
+                <label for="dc-cvv">CVV:</label>
+                <input type="text" id="dc-cvv" name="dc-cvv" required>
+            </div>
+
+            <!-- UPI Form -->
+            <div id="upi-form" class="payment-details-form" style="display: none;">
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" name="upi-id" required>
+            </div>
+
+            <button type="submit" id="pay-button" style="display: none;">Pay</button>
+        </form>
+
+        <!-- Verification Section -->
+        <div id="verification-section" style="display: none;">
+            <h2>Verification</h2>
+            <p>Please enter the verification code sent to your email to complete the purchase.</p>
+            <form id="verification-form">
+                <label for="verification-code">Verification Code:</label>
+                <input type="text" id="verification-code" name="verification-code" required>
+                <button type="submit">Verify</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+    <script src="../js/payment.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
